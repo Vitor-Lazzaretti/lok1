@@ -6,13 +6,7 @@ dotenv.config();
 
 const server = express();
 
-server.use(cors({
-  origin: '',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: '*',
-  exposedHeaders:'*',
-  credentials: false
-}));
+server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended: true}));
 
