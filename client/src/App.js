@@ -5,10 +5,14 @@ function App() {
 
   function postName() {
     setLoading(true);
-    fetch('/api')
+
+    fetch('/api', { 
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    })
       .then((res) => {
-        setLoading(false);
-        setTimeout(alert(res.status), 100);
+        setLoading(false);  
+        res.json().then((res) => alert(res.api));
     });
   }
 
