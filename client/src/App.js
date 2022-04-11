@@ -1,24 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Axios from 'axios';
 
 function App() {
+  const url = 'http://localhost:5000'
   const [loading, setLoading] = useState(false);
 
+  const returnLeo = () => {
+    Axios.get(`${url}/api`, {}).
+      then((res) => {
+        alert(res.data.api);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
   function postName() {
     setLoading(true);
-
-    fetch('/api', { 
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then((res) => {
-        setLoading(false);  
-        res.json().then((res) => alert(res.api));
-    });
   }
 
   return (
     <div className="App">
-      <button onClick={postName}> Carregar Backend </button>
+      <button onClick={returnLeo}> Carregar Backend - learn react </button>
       {loading && 
         <h1> LOADING </h1>
       } 
