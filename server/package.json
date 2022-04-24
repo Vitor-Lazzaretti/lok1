@@ -1,18 +1,17 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Math Club Elite",
   "type": "module",
-  "main": "server.js",
   "engines": {
     "node": "16.X"
   },
+  "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/server.js"
   },
-  "author": "Vitor Luis Rodrigues Lazzaretti",
+  "author": "Vitor Lazzaretti",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
