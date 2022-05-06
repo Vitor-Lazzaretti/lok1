@@ -17,13 +17,8 @@ server.use(express.static(path.join(__dirname, './dist')));
 
 server.use('/api', router);
 
-server.use('*', (req, res) => {
-  console.log((path.join(__dirname+'/dist/static/')));
-  try {
-    res.sendFile(path.join(__dirname+'/dist/index.html'));
-  } catch (error) {
-    return;
-  }
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
 const port = process.env.PORT || 5000;
