@@ -1,9 +1,13 @@
-import React from 'react';
-import { signInWithGoogle } from '../../../../auth/firebase/firebase';
+import React, { useContext } from 'react';
+import { AuthGoogleContext } from '../../../../auth/AuthGoogle';
 
 const Initial = () => {
+    const { signInWithGoogle } = useContext(AuthGoogleContext);
     return (
-        <h1 onClick={signInWithGoogle}> Logar com Google </h1>
+        <>
+            <h1> Logar com Google </h1>
+            <button onClick={signInWithGoogle}> </button>
+        </>
     );
 };
 
