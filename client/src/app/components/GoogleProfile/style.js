@@ -7,7 +7,7 @@ export const ImageProfile = styled.div.attrs(props => ({
   width: ${props => props.size};
   height:  ${props => props.size};
   border-radius: 50%;
-  background-image: url(${props => props.url});
+  background-image: url("${props => props.url}");
   background-size: cover;
 
   div {
