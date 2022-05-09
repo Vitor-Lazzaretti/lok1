@@ -1,10 +1,10 @@
 import React from 'react';
 import Router from './auth/routes/Router';
+import 'normalize.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1> Hello </h1> 
+    <div id='Application'>
       <Router />
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthGoogleProvider } from './auth/AuthGoogle';
+import AuthGoogleProvider from './auth/AuthGoogleContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
