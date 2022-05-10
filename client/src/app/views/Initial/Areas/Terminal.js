@@ -1,26 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import banner from '../../../../assets/banner.png'
 
-export const Background = styled.section`
-  height: calc(100vh - 80px);
+export const TerminalSection = styled.section`
+  height: 100vh;
   width: 100%;
-  /* background-image: url("https://c.wallhere.com/photos/16/4e/Apple_Inc_macOS_macOS_Monterey-2020165.jpg!d"); */
+  /* background-image: url(${banner}); */
+  
+  background-image: url("https://pranx.com/hacker/green-back.jpg");
+  /* background-image: radial-gradient(circle at 56.16% -20.44%, #fc49df 0, #e843e6 16.67%, #d13fec 33.33%, #b53cf2 50%, #933cf8 66.67%, #673ffd 83.33%, #0043ff 100%); */
   background-size: cover;
   background-position: bottom;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(circle at 56.16% -20.44%, #fc49df 0, #e843e6 16.67%, #d13fec 33.33%, #b53cf2 50%, #933cf8 66.67%, #673ffd 83.33%, #0043ff 100%);
 `;
 
 export const TerminalContainer = styled.div`
-  width: 770px;
-  height: 510px;
-  background-color: #222;
+  width: min(65%, 754px);
+  height: min(72%, 450px);
+  background-color: #000;
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
+  border-radius: 4px;
   overflow: hidden;
+  border: 1px solid #000;
+  box-shadow: 0px 0px 10px #444444;
+  margin-top: 35px;
 `;
 
 export const TerminalHeader = styled.div`
@@ -50,21 +56,12 @@ const HeaderButton = styled.div.attrs(props => ({
   justify-content: center;
 
   div {
-    margin-left: 1px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background-color: #00000060;
   }
 
-`;
-
-const TextHeader = styled.div`
-  margin: auto;
-  font-size: 15px;
-  margin-top: 6px;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 500;
 `;
 
 export const TerminalHeaderButton = ({ color, run }) => {
@@ -75,18 +72,70 @@ export const TerminalHeaderButton = ({ color, run }) => {
   )
 }
 
-export const FileIndicator = ({ children }) => {
+export const TerminalBody = styled.div`
+  font-family: 'Chakra Petch', Arial, Helvetica, sans-serif;
+  padding: 10px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  line-height: 25px;
+  color: #5efc03;
+  user-select: none;
+  text-shadow: 1px 1px 1px #61fc08;
+  display: inline-flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;               /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: inherit;        /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #444;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    /* border: 1px solid #5efc03;  creates padding around scroll thumb */
+  }
+
+  span {
+    margin: auto;
+    display: block;
+  };
+
+  hr {
+    width: 100%;
+    border-color: #5efc03;
+    border-style: dashed;
+  };
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-left: 8px;
+  }
+  input {
+    border: 0;
+    outline: 0;
+    padding: 2px;
+    width: 64px;
+    border-bottom: #5efc03 2px solid;
+    margin: auto;
+    background-color: inherit;
+    font-family: inherit;
+    color: inherit;
+    text-shadow: inherit;
+    letter-spacing: inherit;
+  }
+`;
+
+export const Item = ( {onClick, id, children }) => {
   return (
-    <TextHeader>
-      {children}
-    </TextHeader>
+    <div onClick={() => onClick()} style={{ marginLeft: 8 }}> [{id}] {'>'} {children} </div>
   )
 }
-
-
-
-
-
 
 
 
