@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderRight>
-      <ButtonLink primary={true}  to={'/'}>
+      <ButtonLink to={'/'}>
           Início
         </ButtonLink>
         <ButtonLink to={'/home'}> 

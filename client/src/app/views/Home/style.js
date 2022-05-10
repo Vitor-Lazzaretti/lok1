@@ -34,6 +34,17 @@ export const Scenery = styled.div`
     bottom: 0;
     right: 0;
   }
+
+  .image{
+    width: 180px;
+    height: 180px;
+    background-image: url("https://images.vexels.com/media/users/3/145137/isolated/preview/e6a965902c88e80552d448aa33cab165-icone-de-raios-nitidos-de-sol.png");
+    background-size: cover;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
 `;
 
 export const ScroolItensArea = styled.div`
@@ -47,7 +58,7 @@ export const ScroolItensArea = styled.div`
 
 export const ItemArea = styled.div`
   width: 100%;
-  height: 80px;
+  height: 90px;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
