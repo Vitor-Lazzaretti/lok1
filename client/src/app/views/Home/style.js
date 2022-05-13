@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import matrix from '../../../assets/matrix.png';
 
 export const HomeContainer = styled.section`
   height: calc(100vh - 80px);
@@ -23,18 +24,28 @@ export const HomeDiv = styled.div.attrs(props => ({
 
 export const Scenery = styled.div`
   width: 90%;
-  position: relative;
-  max-height: 80%;
-  padding-top: 52.25%;
+  height: 80%;
   background-color: #affefe;
   box-shadow: 0px 0px 15px 0px #222;
+  background-image: url(${matrix});
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 
-  svg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  h2 {
+    font-size: 40px;
+    text-shadow: 0px 0px 8px #000;
+    margin: 20px;
   }
 
+  p {
+    margin: 30px;
+    text-align: center;
+  }
+ 
   .image{
     width: 180px;
     height: 180px;
@@ -56,12 +67,25 @@ export const ScroolItensArea = styled.div`
   align-items: center;
 `;
 
-export const ItemArea = styled.div`
+export const ItemArea = styled.div.attrs(props => ({
+  url: props.url || ''
+}))`
   width: 100%;
-  height: 90px;
+  height: 126px;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  .img {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    margin-left: 3px;
+    background-size: cover;
+    background-position: center;
+  }
+  .item-desc {
+    margin: auto;
+  }
 `;

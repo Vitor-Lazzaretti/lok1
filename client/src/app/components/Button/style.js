@@ -20,7 +20,7 @@ export const ButtonStyle = styled.button.attrs(props => ({
   text-decoration: none;
 
   &:hover {
-    background-color: #7bed09; // #00FA9A // #7CFC00 // #44D7A8
-    color: #000;
+    background-color: #005418; // #00FA9A // #7CFC00 // #44D7A8
+    color: #fff;
   }
 `;
